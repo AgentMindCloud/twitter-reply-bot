@@ -4,7 +4,7 @@ name: "Smart Twitter Reply Bot"
 description: "AI agent that replies to mentions intelligently (X-first)"
 category: "twitter"
 tags: ["bot", "reply", "automation"]
-ecosystem: "x"
+ecosystem: ["grok", "x"]
 repository: "https://github.com/AgentMindCloud/twitter-reply-bot"
 update_strategy: "semver"
 preferred_deploy: ["railway", "vercel", "fly"]
