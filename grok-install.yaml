@@ -1,7 +1,7 @@
 version: "2.2"
 mode: "simple"
-name: "Smart Twitter Reply Bot"
-description: "AI agent that replies to mentions intelligently (X-first) — supports Grok, OpenAI, or Claude"
+name: "Smart Twitter Reply Bot v2.2"
+description: "Multi-LLM Twitter reply bot (Grok + OpenAI + Claude) – built with grok-install"
 category: "twitter"
 tags: ["bot", "reply", "automation", "multi-llm"]
 featured: true
@@ -10,13 +10,11 @@ repository: "https://github.com/AgentMindCloud/twitter-reply-bot"
 update_strategy: "semver"
 preferred_deploy: ["railway", "vercel", "fly"]
 
-# Passive Growth Engine
 promotion:
   auto_welcome: true
   share_installs: true
   weekly_highlight: true
 
-# Multi-LLM Support
 deploy:
   target: "railway"
   env:
@@ -42,15 +40,10 @@ prompts:
     message: "Please paste your X API secret:"
 
 on_install:
-  welcome: "✅ Smart Twitter Reply Bot is now live! It will reply to mentions using your chosen LLM (Grok, OpenAI or Claude)."
-  suggested_commands:
-    - "/status"
-    - "/tweets"
-    - "/help"
+  welcome: "✅ Smart Twitter Reply Bot v2.2 is now live! Multi-LLM ready (Grok, OpenAI or Claude)."
   share_card: true
 
 security:
   verified_by_grok: true
 
-# Marketplace & User Experience
 shareable_card: true
