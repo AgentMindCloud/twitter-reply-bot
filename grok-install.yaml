@@ -7,6 +7,12 @@ tags: ["reply-bot", "automation", "multi-llm", "trigger-source"]
 featured: true
 ecosystem: ["grok", "x"]
 
+# Smart LLM section – fixes the multiple Grok/xAI API key problem
+llm:
+  provider: "grok"                  # change to "openai" or "anthropic" if you prefer
+  model: "grok-4"
+  api_key_env: "GROK_API_KEY"       # Grok will now ask ONLY for this one key
+
 # Passive Growth Engine
 promotion:
   auto_welcome: true
@@ -20,9 +26,6 @@ preferred_deploy: ["railway", "render", "fly", "local"]
 deploy:
   env:
     X_API_KEY: "Ask the user for their X API key"
-    GROK_API_KEY: "Ask the user for their xAI/Grok API key"
-    OPENAI_API_KEY: "Ask the user for their OpenAI API key (optional)"
-    CLAUDE_API_KEY: "Ask the user for their Claude API key (optional)"
 
 # Safety & Trust
 security:
