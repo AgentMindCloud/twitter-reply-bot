@@ -1,24 +1,31 @@
-# Twitter Reply Bot
+# Smart Twitter Reply Bot
 
-Smart AI bot that replies intelligently to mentions and DMs on X.
+AI agent that intelligently replies to mentions on X.  
+Supports **Grok**, **OpenAI**, or **Claude** (choose via `LLM_PROVIDER`).
 
-**Grok-Installed** ✓
-
-[![Featured in Grok](https://img.shields.io/badge/Featured_in_Grok-00f0ff?style=for-the-badge&logo=x&logoColor=white)](https://github.com/AgentMindCloud/grok-install)
 [![Grok-Installed](https://img.shields.io/badge/Grok-Installed-00f0ff?style=for-the-badge&logo=x&logoColor=white)](https://x.com/i/grok?grok-install=true)
 
-### One-click install
-Reply to this repo on X with “Install with Grok” or use the blue pill.
+## Features (v2.2)
+- Multi-LLM support: Grok, OpenAI GPT, or Claude
+- One-click install via grok-install
+- Automatic replies to mentions
+- Passive Growth Engine enabled (auto-welcome on X)
+- Shareable install card
 
-**Install with Grok** → (Grok will guide you step-by-step)
+## Quick Install
+1. Click the blue "Install with Grok" button (or post this repo link on X)
+2. Choose your preferred LLM (grok / openai / claude)
+3. Provide the required API keys when asked by Grok
+4. Deploy (defaults to Railway)
 
-### Features
-- Intelligent reply generation
-- Mention & DM handling
-- Voice install supported
+## Configuration
+See `grok-install.yaml` for all options.
 
-**grok-install.yaml** included (v2.1)
+## Environment Variables (see .env.example)
+- `LLM_PROVIDER` → grok | openai | claude
+- API keys for the chosen LLM + X credentials
 
-Full docs: https://agentmindcloud.github.io/grok-install/
+Built with ❤️ using grok-install v2.2  
+Multi-LLM ready • Phase 6 compatible
 
-Built live with @JanSol0s (Jani) & Grok — April 2026
+Made live with @JanSol0s (Jani) & Grok.
