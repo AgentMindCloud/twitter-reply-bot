@@ -1,9 +1,9 @@
-version: "2.2"
+version: "2.3"
 name: "Smart Twitter Reply Bot"
 description: "Intelligent auto-replies to mentions using Grok + OpenAI + Claude"
 repository: "https://github.com/AgentMindCloud/twitter-reply-bot"
 category: "twitter"
-tags: ["reply-bot", "automation", "multi-llm"]
+tags: ["reply-bot", "automation", "multi-llm", "trigger-source"]
 featured: true
 ecosystem: ["grok", "x"]
 
@@ -38,8 +38,21 @@ shareable_card: true
 on_install:
   welcome_message: "Thank you for installing the Smart Twitter Reply Bot! Your bot is now live and ready to reply."
 
-# Community Self-Management (Wave 4)
+# Community Self-Management
 community:
   onboard: true
   voting_enabled: true
   moderation_level: "standard"
+
+# Multi-Agent Orchestration (Phase 7)
+orchestration:
+  enabled: true
+  role: "reply-bot"
+  can_trigger: ["telegram", "discord"]
+  can_be_triggered_by: []
+  triggers:
+    - event: "mention"
+      action: "generate_reply"
+      target_agents: ["hermes", "discord-mod"]
+    - event: "new_follower"
+      action: "welcome_message"
