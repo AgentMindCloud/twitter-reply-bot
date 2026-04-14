@@ -1,4 +1,4 @@
-version: "2.3"
+version: "2.4"
 name: "Smart Twitter Reply Bot"
 description: "Intelligent auto-replies to mentions using Grok + OpenAI + Claude"
 repository: "https://github.com/AgentMindCloud/twitter-reply-bot"
@@ -7,46 +7,38 @@ tags: ["reply-bot", "automation", "multi-llm", "trigger-source"]
 featured: true
 ecosystem: ["grok", "x"]
 
-# Smart LLM section – fixes the multiple Grok/xAI API key problem
-llm:
-  provider: "grok"                  # change to "openai" or "anthropic" if you prefer
-  model: "grok-4"
-  api_key_env: "GROK_API_KEY"       # Grok will now ask ONLY for this one key
+llm:                          # ← standardized optional section (multi-LLM, fully backwards compatible)
+  provider: "xai"             # default = "xai" | "openai" | "anthropic" | "ollama" | "custom"
+  model: "grok-4"             # default model suggestion
+  api_key_env: "GROK_API_KEY" # tells guided install which secret to ask for
 
 # Passive Growth Engine
 promotion:
   auto_welcome: true
   share_installs: true
   weekly_highlight: true
-
 # Deployment
 mode: "simple"
 preferred_deploy: ["railway", "render", "fly", "local"]
-
 deploy:
   env:
     X_API_KEY: "Ask the user for their X API key"
-
 # Safety & Trust
 security:
   verified_by_grok: true
   safety_checklist: true
-
 # Developer Experience
 update_strategy: "semver"
 auto_generate: true
-
 # Marketplace & User Experience
 shareable_card: true
 on_install:
   welcome_message: "Thank you for installing the Smart Twitter Reply Bot! Your bot is now live and ready to reply."
-
 # Community Self-Management
 community:
   onboard: true
   voting_enabled: true
   moderation_level: "standard"
-
 # Multi-Agent Orchestration (Phase 7)
 orchestration:
   enabled: true
@@ -59,3 +51,10 @@ orchestration:
       target_agents: ["hermes", "discord-mod"]
     - event: "new_follower"
       action: "welcome_message"
+
+credits:
+  standard: "grok-install"
+  author: "@JanSol0s"
+  url: "https://github.com/AgentMindCloud/grok-install"
+  version: "2.4"
+  message: "Powered by grok-install open standard"
