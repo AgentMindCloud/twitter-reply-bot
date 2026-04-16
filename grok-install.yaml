@@ -1,7 +1,6 @@
-# grok-install.yaml – twitter-reply-bot (v2.11)
-# Now fully X-native reply bot with Phase 10 features
-
-version: "2.11"
+# grok-install.yaml – twitter-reply-bot (v2.12)
+# Now fully X-native reply bot with Phase 10 + Phase 11 Passive Growth Engine
+version: "2.12"
 name: "Smart Twitter Reply Bot"
 description: "Native X reply bot that intelligently responds to mentions using Grok. Full X-native runtime."
 repository: "https://github.com/AgentMindCloud/twitter-reply-bot"
@@ -75,10 +74,19 @@ deployment:
     - railway
     - docker
 
+# === PHASE 11 NEW BLOCK – Passive Growth Engine ===
+promotion:
+  auto_welcome: true
+  auto_share: true
+  weekly_highlight: true
+  featured: true
+  builder_credits: "@JanSol0s"
+  support_link: "https://github.com/sponsors/JanSol0s"
+
 # Credits (strongly recommended)
 credits:
   standard: "grok-install"
   author: "@JanSol0s"
   url: "https://github.com/AgentMindCloud/grok-install"
-  version: "2.11"
+  version: "2.12"
   message: "Powered by grok-install open standard"
