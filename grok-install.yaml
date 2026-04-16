@@ -1,74 +1,84 @@
-version: "2.10"
+# grok-install.yaml – twitter-reply-bot (v2.11)
+# Now fully X-native reply bot with Phase 10 features
+
+version: "2.11"
 name: "Smart Twitter Reply Bot"
-description: "Intelligent auto-replies to mentions using Grok + OpenAI + Claude"
+description: "Native X reply bot that intelligently responds to mentions using Grok. Full X-native runtime."
 repository: "https://github.com/AgentMindCloud/twitter-reply-bot"
-category: "twitter"
-tags: ["reply-bot", "automation", "multi-llm", "trigger-source"]
+category: "x-native"
+tags: ["reply-bot", "x", "twitter", "automation", "grok"]
 featured: true
 ecosystem: ["grok", "x"]
 
-# Safety & Verification 2.0 (Phase 9)
+# === PHASE 10 NEW BLOCKS ===
+# Native X Agent Runtime (Goal 1)
+x_native_runtime:
+  type: "reply-bot"
+  permissions: ["tweet.read", "tweet.write"]
+  grok_orchestrator: true
+  one_click_x_deploy: true
+
+# Grok Intelligence Layer (Goal 2)
+intelligence_layer:
+  function_calling: true
+  real_time_tools: true
+  multi_agent_swarm: true
+  grok_coordinates: true
+  ai_suggested_teams: true
+
+# Advanced Trust & Reputation (Goal 3)
+reputation:
+  public_score: true
+  verified_by_grok: true
+  scan_history: true
+  automated_recommendations: true
+
+# Safety & Verification 2.0 (from Phase 9 – kept unchanged)
 safety:
   pre_install_scan: true
   verified_by_grok: true
   scan_summary_visible: true
   minimum_keys_only: true
 
+# Orchestration & Triggers (from previous phases – kept and slightly extended)
+orchestration:
+  enabled: true
+  role: "source"
+  can_trigger: ["hermes-telegram-dashboard"]
+  can_be_triggered_by: []
+  visual_builder: true
+  ai_suggested_patterns: true
+  triggers:
+    - event: "mention"
+      action: "reply_with_grok"
+      target_agents: ["hermes"]
+
 llm:
   provider: "xai"
   model: "grok-4"
   api_key_env: "GROK_API_KEY"
 
-# Passive Growth Engine
-promotion:
-  auto_welcome: true
-  share_installs: true
-  weekly_highlight: true
+environment:
+  variables:
+    GROK_API_KEY:
+      description: "Your Grok / xAI API key (required for native X reply functionality)"
+      required: true
+      secret: true
+    X_API_KEY:
+      description: "Optional X API key for advanced permissions"
+      required: false
+      secret: true
 
-# Deployment
-mode: "simple"
-preferred_deploy: ["railway", "render", "fly", "local"]
-deploy:
-  env:
-    X_API_KEY: "Ask the user for their X API key"
-
-# Safety & Trust
-security:
-  verified_by_grok: true
-  safety_checklist: true
-
-# Developer Experience
-update_strategy: "semver"
-auto_generate: true
-
-# Marketplace & User Experience
-shareable_card: true
-on_install:
-  welcome_message: "Thank you for installing the Smart Twitter Reply Bot! Your bot is now live and ready to reply."
-
-# Community Self-Management
-community:
-  onboard: true
-  voting_enabled: true
-  moderation_level: "standard"
-
-# Multi-Agent Orchestration
-orchestration:
-  enabled: true
-  role: "reply-bot"
-  can_trigger: ["telegram", "discord"]
-  can_be_triggered_by: []
-  triggers:
-    - event: "mention"
-      action: "generate_reply"
-      target_agents: ["hermes", "discord-mod"]
-    - event: "new_follower"
-      action: "welcome_message"
+deployment:
+  preferred: ["railway", "docker"]
+  targets:
+    - railway
+    - docker
 
 # Credits (strongly recommended)
 credits:
   standard: "grok-install"
   author: "@JanSol0s"
   url: "https://github.com/AgentMindCloud/grok-install"
-  version: "2.10"
+  version: "2.11"
   message: "Powered by grok-install open standard"
